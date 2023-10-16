@@ -4,6 +4,10 @@ import Overview from './pages/Overview'
 import WritePosts from './pages/Writeposts'
 import AllPosts from './pages/AllPosts'
 import NotFound from "./pages/NotFound"
+import { ToastContainer } from "react-toastify"
+import AdminLogin from "./pages/AdminLogin"
+import Public from "./routes/Public"
+import Private from "./routes/Private"
 
 
 
@@ -12,11 +16,16 @@ function App() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Home />,
+            element: 
+                <Private>
+                    <Home />
+                </Private>,
+                
             children:[
                 {
                     path: '/',
-                    element: <Overview />
+                    element: 
+                            <Overview />
                 },
                 {
                     path: 'write-post',
@@ -29,14 +38,35 @@ function App() {
                 {
                     path: '*',
                     element: <NotFound />
-                }
+                },
+                
             ]
+        },
+        {
+            path: "admin-login",
+            element: 
+                <Public>
+                    <AdminLogin />
+                </Public>
         }
     ])
 
     return(
         <>
             <RouterProvider router={router} />
+
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </>
     )
   

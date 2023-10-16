@@ -1,10 +1,10 @@
 import React from 'react'
-import AddPostForm from '../components/layout/AddPostForm'
+import PostForm from '../components/layout/PostForm'
 
 function Writeposts() {
   return (
     <>
-      <AddPostForm />
+      <PostForm />
     </>
   )
 }
