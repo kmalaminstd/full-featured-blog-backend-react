@@ -134,6 +134,7 @@ function PostForm() {
                         <option value="science" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Science</option>
                         <option value="technology" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Technology</option>
                         <option value="short-stories" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Short Stories</option>
+                        <option value="islamic" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Islam</option>
                     </select>
 
                     <input type="file" accept="image/*" className="w-full border outline-none border-lime-300 px-4 py-2" onChange={handleChange} name="postImg" />
