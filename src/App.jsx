@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify"
 import AdminLogin from "./pages/AdminLogin"
 import Public from "./routes/Public"
 import Private from "./routes/Private"
+import Profile from "./pages/Profile"
 
 
 
@@ -38,6 +39,10 @@ function App() {
                 {
                     path: '*',
                     element: <NotFound />
+                },
+                {
+                    path: 'profile',
+                    element: <Profile />
                 },
                 
             ]

@@ -54,6 +54,13 @@ function Sidebar() {
             </Link>
           </li>
 
+          <li className="w-full">
+            <Link className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl text-black font-semibold hover:bg-gradient-to-r from-sky-600 to-cyan-400 hover:transition-all hover:text-white ${active === 'profile' ? "bg-gradient-to-r from-sky-600 to-cyan-400 text-white" : ''}`} onClick={()=>setActive("profilet")} to="profile">
+              <BiSolidAddToQueue />
+              <span>Profile</span>
+            </Link>
+          </li>
+
 
         </ul>
       </div>

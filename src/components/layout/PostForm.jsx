@@ -8,6 +8,9 @@ import { Timestamp, addDoc, serverTimestamp } from 'firebase/firestore'
 import {AuthContext} from '../../context/Auth.context'
 import { useNavigate } from 'react-router-dom'
 
+
+
+
 function PostForm() {
     const {currentUser} = useContext(AuthContext)
     const editor = useRef(null)
@@ -17,7 +20,10 @@ function PostForm() {
         postTitle: '',
         postCategory: ''
     })
-    console.log(currentUser);
+    // console.log(currentUser);
+
+
+
     const handleSubmit = (e)=>{
         e.preventDefault()
 
@@ -45,6 +51,8 @@ function PostForm() {
                             featured: false,
                             createdAt: Timestamp.fromDate(new Date())
                         }).then(()=>{
+
+
                             
                             navigate('/all-posts')
                         }).catch((err)=>{
@@ -120,6 +128,12 @@ function PostForm() {
                         <option value="lifeHacks" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Life Hacks</option>
                         <option value="programming" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Programming</option>
                         <option value="travel" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Travel</option>
+                        <option value="history" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">History</option>
+                        <option value="sports" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Sports</option>
+                        <option value="life-story" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Life Story</option>
+                        <option value="science" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Science</option>
+                        <option value="technology" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Technology</option>
+                        <option value="short-stories" className="w-full border outline-none border-lime-300 px-4 py-2 cursor-pointer">Short Stories</option>
                     </select>
 
                     <input type="file" accept="image/*" className="w-full border outline-none border-lime-300 px-4 py-2" onChange={handleChange} name="postImg" />

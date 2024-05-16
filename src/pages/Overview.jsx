@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
 import {Chart as chartjs} from 'chart.js/auto';
 import { Line, Pie } from 'react-chartjs-2';
+import { useContext } from 'react';
+import { BlogContext } from '../context/Blog.context';
 // console.log(Chart);
 function Overview() {
 
-  const [chartData, setChartData] = useState({
-    labels: ["January", "February", "March", "April", "May", "June"],
-    config: [
-      {
-        label: "Demo Data set",
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: '0.1'
-      }
-    ]
-  })
+  const {blogs} = useContext(BlogContext)
+  const [monthData, setMonthData] = useState([])
+  const data = new Date()
+
+  const monthArr =  [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  if(blogs){
+    blogs.map((elm)=>{
+      monthData.push(monthArr[data.getMonth(elm.createdAt)])
+      console.log(monthData);
+    })
+  }
+
 
   return (
     <>
